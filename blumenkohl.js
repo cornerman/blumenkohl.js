@@ -7,6 +7,7 @@ var Watcher = require("broccoli-sane-watcher");
 var ncp = require("ncp");
 var path = require("path");
 var mkdirp = require("mkdirp");
+var clc = require("cli-color");
 
 var args = process.argv.slice(2);
 
@@ -24,13 +25,12 @@ var builder = new broccoli.Builder(tree);
 
 var broccoliWatcher = new Watcher(builder, {verbose: true});
 broccoliWatcher.on("change", function(hash) {
-  console.log("Build finished in " + Math.round(hash.totalTime / 1e6) + " ms");
   ncp(hash.directory, path.join(appRoot, destDir));
-  return hash;
+  console.log(clc.green("Build was successful: " + Math.round(hash.totalTime / 1e6) + "ms"));
 });
 
 broccoliWatcher.on("error", function(error) {
-  console.log("ERROR", error.message);
+  console.log(clc.red("An error occurred:"), error.message);
 });
 
 process.addListener("exit", function () {
