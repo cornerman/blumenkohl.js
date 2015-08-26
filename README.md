@@ -11,4 +11,4 @@ Then run it from your app root, where your ```Brocfile.js``` resides:
 
 ```blumenkohl [destination]```
 
-By default, the build results will be written to the destination folder ```public```.
+If destination is not set, the build results will be written to the destination folder ```public/```.
