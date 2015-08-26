@@ -13,14 +13,13 @@ var args = process.argv.slice(2);
 
 var appRoot = process.cwd();
 var destDir = args[0] || "public";
-var brocfile = path.join(appRoot, "Brocfile.js");
 
-console.log("Reading Brocfile", brocfile);
+console.log("Reading Brocfile in", appRoot);
 console.log("Writing to", destDir, "\n");
 
 mkdirp(destDir);
 
-var tree = require(brocfile);
+var tree = broccoli.loadBrocfile();
 var builder = new broccoli.Builder(tree);
 
 var broccoliWatcher = new Watcher(builder, {verbose: true});
