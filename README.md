@@ -3,8 +3,12 @@ Watch and build with Broccoli.js
 
 ## Usage
 
-Place blumenkohl.js in your app root, where your ```Brocfile.js``` resides. Then run:
+Install blumenkohl:
 
-```./blumenkohl.js [destination]```
+```npm -g install blumenkohl.js```
+
+Then run it from your app root, where your ```Brocfile.js``` resides:
+
+```blumenkohl [destination]```
 
 By default, the build results will be written to the destination folder ```public```.

@@ -8,16 +8,14 @@ var ncp = require("ncp");
 var path = require("path");
 var mkdirp = require("mkdirp");
 
-var arguments = process.argv.slice(2);
+var args = process.argv.slice(2);
 
-var appRoot = __dirname;
-var destDir = arguments[0] || "public"
+var appRoot = process.cwd();
+var destDir = args[0] || "public";
 var brocfile = path.join(appRoot, "Brocfile.js");
 
 console.log("Reading Brocfile", brocfile);
 console.log("Writing to", destDir, "\n");
-
-process.chdir(appRoot);
 
 mkdirp(destDir);
 

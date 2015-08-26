@@ -1,9 +1,38 @@
 {
+  "name": "blumenkohl.js",
+  "version": "0.0.1",
+  "description": "Watch and build with Broccoli.js",
+  "author": {
+    "name": "Johannes Karoff"
+  },
+  "license": "MIT",
+  "preferGlobal": true,
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/cornerman/blumenkohl.js"
+  },
+  "main": "blumenkohl.js",
+  "bin": {
+    "blumenkohl": "./blumenkohl.js"
+  },
+  "keywords": [
+    "broccoli-plugin",
+    "broccoli watch",
+    "broccoli build",
+    "sane"
+  ],
+  "homepage": "https://github.com/cornerman/blumenkohl.js",
+  "maintainers": [
+    {
+      "name": "Johannes Karoff",
+      "email": "johannes@karoff.net"
+    }
+  ],
   "dependencies": {
     "broccoli": "^0.16.7",
     "broccoli-sane-watcher": "^1.1.4",
+    "mkdirp": "^0.5.1",
     "ncp": "^2.0.0",
-    "sane": "^1.2.0",
-    "mkdirp": "^0.5.1"
+    "sane": "^1.2.0"
   }
 }
