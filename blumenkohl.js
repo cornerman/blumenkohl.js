@@ -24,7 +24,7 @@ var builder = new broccoli.Builder(tree);
 
 var broccoliWatcher = new Watcher(builder, {verbose: true});
 broccoliWatcher.on("change", function(hash) {
-  ncp(hash.directory, path.join(appRoot, destDir));
+  ncp(hash.directory, path.join(appRoot, destDir), { dereference: true }, () => {});
   console.log(clc.green("Build was successful: " + Math.round(hash.totalTime / 1e6) + "ms"));
 });
 
